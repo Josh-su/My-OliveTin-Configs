@@ -1,0 +1,160 @@
+logLevel: "INFO"
+showNavigation: true
+themeName: DeliciousOlives
+
+authLocalUsers:
+  enabled: true
+  users:
+    - username: admin
+      password: #/*YourHashedPassword*/ https://docs.olivetin.app/local-users.html
+      groups:
+        - admins
+    - username: guest
+      password: #/*YourHashedPassword*/https://docs.olivetin.app/local-users.html
+      groups:
+        - guests
+
+defaultPermissions:
+  view: false
+  exec: false
+  logs: false
+
+accessControlLists:
+  - name: admins
+    addToEveryAction: true
+    matchUsernames:
+      - admin
+    matchUsergroups:
+      - admins
+    permissions:
+      view: true
+      exec: true
+      logs: true
+  - name: guests
+    addToEveryAction: false
+    matchUsernames:
+      - guest
+    matchUsergroups:
+      - guests
+    permissions:
+      view: true
+      exec: true
+      logs: true
+
+actions:
+  # This is a hidden action, that is run on startup, and every 5 minutes
+  - title: Update container entity file
+    shell: docker ps -a --format json > /config/entities/containers.json
+    hidden: true
+    execOnStartup: true
+    execOnCron: '*/5 * * * *'
+
+  - title: Update guest_container entity file
+    shell: docker ps -a --filter "name=All-The-Mods-9" --filter "name=JDownloader2" --format json > /config/entities/guest_container.json
+    hidden: true
+    execOnStartup: true
+    execOnCron: '*/5 * * * *'
+    acls:
+      - guests
+
+  - title: Start {{ container.Names }}
+    icon: <iconify-icon icon="tabler:play"></iconify-icon>
+    shell: docker start {{ container.Names }}
+    entity: container
+    trigger: Update container entity file
+
+  - title: Stop {{ container.Names }}
+    icon: <iconify-icon icon="mingcute:stop-line"></iconify-icon>
+    shell: docker stop {{ container.Names }}
+    timeout: 8
+    entity: container
+    trigger: Update container entity file
+    
+  - title: Restart {{ container.Names }}
+    icon: <iconify-icon icon="mdi:restart"></iconify-icon>
+    shell: docker restart {{ container.Names }}
+    entity: container
+    trigger: Update container entity file
+    
+  - title: View logs {{ container.Names }}
+    popupOnStart: execution-dialog-stdout-only
+    icon: <iconify-icon icon="tabler:logs"></iconify-icon>
+    shell: docker logs --tail 100 -f {{ container.Names }}
+    timeout: 100
+    entity: container
+    
+  - title: Start {{ guest_container.Names }}
+    icon: <iconify-icon icon="tabler:play"></iconify-icon>
+    shell: docker start {{ guest_container.Names }}
+    entity: guest_container
+    trigger: Update guest_container entity file
+    acls:
+      - guests
+
+  - title: Stop {{ guest_container.Names }}
+    icon: <iconify-icon icon="mingcute:stop-line"></iconify-icon>
+    shell: docker stop {{ guest_container.Names }}
+    timeout: 8
+    entity: guest_container
+    trigger: Update guest_container entity file
+    acls:
+      - guests
+    
+  - title: Restart {{ guest_container.Names }}
+    icon: <iconify-icon icon="mdi:restart"></iconify-icon>
+    shell: docker restart {{ guest_container.Names }}
+    entity: guest_container
+    trigger: Update guest_container entity file
+    acls:
+      - guests
+    
+  - title: View logs {{ guest_container.Names }}
+    popupOnStart: execution-dialog-stdout-only
+    icon: <iconify-icon icon="tabler:logs"></iconify-icon>
+    shell: docker logs --tail 100 -f {{ guest_container.Names }}
+    timeout: 100
+    entity: guest_container
+    acls:
+      - guests
+
+# Docs: http://docs.olivetin.app/entities.html
+entities:
+  - file: /config/entities/guest_containers.json
+    name: guest_container
+  - file: /config/entities/containers.json
+    name: container
+
+# The only way to properly use entities, are to use them with a `fieldset` on a dashboard.
+dashboards:
+  - title: Guests Containers
+    contents:
+      - title: |
+          Container : {{ guest_container.Names }}
+          Image Source : ({{ guest_container.Image }})
+        entity: guest_container
+        type: fieldset
+        contents:
+          - type: display
+            cssClass: '{{ guest_container.State }}'
+            title: |
+              <img src="{{ guest_container.Labels }}"><br/><br/>
+              {{ guest_container.Status }}
+          - title: 'Start {{ guest_container.Names }}'
+          - title: 'Stop {{ guest_container.Names }}'
+          - title: 'Restart {{ guest_container.Names }}'
+          - title: 'View logs {{ guest_container.Names }}'
+  - title: All Containers
+    contents:
+      - title: 'Container {{ container.Names }} ({{ container.Image }})'
+        entity: container
+        type: fieldset
+        contents:
+          - type: display
+            cssClass: '{{ container.State }}'
+            title: |
+              <img src="{{ container.Labels }}"><br/><br/>
+              {{ container.Status }}
+          - title: 'Start {{ container.Names }}'
+          - title: 'Stop {{ container.Names }}'
+          - title: 'Restart {{ container.Names }}'
+          - title: 'View logs {{ container.Names }}'
