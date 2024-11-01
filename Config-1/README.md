@@ -1,5 +1,5 @@
 # The Final Product
-![image](https://github.com/user-attachments/assets/02045962-ed59-4194-b9a6-b8be11e278ac)
+![image](https://github.com/user-attachments/assets/84a5c89a-eace-41bb-bac6-aa42ca3f3dca)
 
 ## Explanation
 
