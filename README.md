@@ -1,6 +1,6 @@
 # My-OliveTin-Configs
 
-## [Unraid Setup](https://github.com/Josh-su/My-OliveTin-Configs/tree/main/Setup#unraid-setup)
+## [Unraid Setup](https://github.com/Josh-su/My-OliveTin-Configs/blob/main/Setup/unraid-setup.md)
 
 ## [Config-1](https://github.com/Josh-su/My-OliveTin-Configs/tree/main/Config-1#readme)
 This configuration enables the **Filtered Container** feature, where action buttons are activated or deactivated based on the `container.State` variable. This allows for a dynamic user experience, displaying relevant options depending on the current state of the container.
