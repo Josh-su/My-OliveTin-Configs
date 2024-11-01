@@ -1,4 +1,14 @@
-### 1. Animate the Button with a Color Pulse When Activated
+### Hover Glow
+A glow effect on hover can create a nice visual cue that the button is interactive.
+```
+/* Hover glow effect */
+action-button button:hover {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    transition: box-shadow 0.3s ease;
+}
+```
+
+### Animate the Button with a Color Pulse When Activated
 This adds a pulsing effect to indicate that the button is in an active state. You can control the animation timing and color intensity.
 
 ```
@@ -17,11 +27,11 @@ action-button.exited button[title*="Start"],
 action-button.running button[title*="Stop"] {
     pointer-events: auto;
     opacity: 1;
-    animation: pulse 1.5s infinite;
+    animation: pulse 1.5s 5s;
 }
 ```
 
-### 2. Slide-in Animation on Activation
+### Slide-in Animation on Activation
 This option moves the button slightly up or down when it becomes active, which can emphasize the state change.
 
 ```
@@ -46,7 +56,7 @@ action-button.running button[title*="Stop"] {
 }
 ```
 
-### 3. Glow Effect on Activation
+### Glow Effect on Activation
 This creates a glow effect when the button is active, drawing attention to it.
 
 ```
