@@ -1,6 +1,6 @@
 # Table of Contents
 - [Using Docker Command](#using-docker-command)
-- [Install extra packages](#install-extra-packages)
+- [Install extras packages](#install-extras-packages)
 
 ---
 
