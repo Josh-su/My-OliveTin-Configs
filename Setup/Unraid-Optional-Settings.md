@@ -63,7 +63,7 @@ Finally, specify the path to the Docker socket, which is usually located at:
 To enhance the functionality of your OliveTin container, you may want to install additional packages. For this purpose, you will need to use `microdnf`, a lightweight package manager.
 ## Add Post Arguments
 To install additional packages during the container's setup, you will need to add a command in the "Post Arguments" section.
-Make sure to switch to the [Advanced view](https://github.com/Josh-su/My-OliveTin-Configs/blob/main/Setup/unraid-setup.md#activate-advanced-view) in your container settings.
+Make sure to switch to the [Advanced view](https://github.com/Josh-su/My-OliveTin-Configs/blob/main/Setup/Unraid-Setup.md#activate-advanced-view) in your container settings.
 in "Post Arguments:" add
 ```
 docker exec -it --user root OliveTin /bin/bash -c "microdnf install -y PACKAGE1 PACKAGE2 && microdnf clean all"
