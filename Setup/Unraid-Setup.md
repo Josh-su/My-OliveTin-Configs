@@ -31,6 +31,4 @@ Once the configuration folder is established, create your config.yaml file. Uplo
 ## Test the Setup
 At this point, your OliveTin container should be configured with all necessary parameters to function correctly. To verify that everything is working as expected, start the container and check for any errors or issues. Ensure that the application loads properly and that your configuration settings are being applied correctly.
 
-!!! note
-  If you want to explore additional configuration options, be sure to check out the [Optional Settings Guide](https://github.com/Josh-su/My-OliveTin-Configs/blob/main/Setup/Optional-Settings.md#table-of-contents). 
-  This guide offers a comprehensive overview of various settings you can customize to adapt your OliveTin setup to your specific needs.
+> **Note:** If you want to explore additional configuration options, be sure to check out the [Optional Settings Guide](https://github.com/Josh-su/My-OliveTin-Configs/blob/main/Setup/Optional-Settings.md#table-of-contents). This guide offers a comprehensive overview of various settings you can customize to adapt your OliveTin setup to your specific needs.
