@@ -1,6 +1,6 @@
 # My [OliveTin](https://docs.olivetin.app/index.html) Configs
 
-## [Unraid Setup](https://github.com/Josh-su/My-OliveTin-Configs/blob/main/Setup/unraid-setup.md)
+## [Unraid Setup](https://github.com/Josh-su/My-OliveTin-Configs/blob/main/Setup/Unraid-setup.md)
 
 
 ## [Config-1](https://github.com/Josh-su/My-OliveTin-Configs/tree/main/Config-1#readme)
