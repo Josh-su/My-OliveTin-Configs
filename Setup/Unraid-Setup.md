@@ -19,7 +19,7 @@ ensure that Advanced View is activated. This will provide you with more configur
 ## (Optional) Change the Icon URL
 You can customize the icon displayed for OliveTin by modifying the Icon URL. The default icon URL does not point to an existing file. If you would like to use the OliveTin logo, you can change it to the following URL:```https://docs.olivetin.app/images/icons/OliveTinLogo.png```
 
-## (Optional) Change the Congig Path
+## (Optional) Change the Config Path
 If desired, you can specify a custom path for the OliveTin configuration folder.
 
 ## Apply the Settings
