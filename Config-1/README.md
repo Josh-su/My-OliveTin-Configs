@@ -105,9 +105,6 @@ action-button.running button[title*="Stop"] {
 ```
 These CSS rules manage the state of action buttons based on the container's status. Buttons appear disabled and semi-transparent when inactive, while they are fully interactive when the corresponding container is running.
 
-#### (Optional) Adding Animation
-If you want to add animation effects to your action button, take a look at this collection of [CSS animation examples](https://github.com/Josh-su/My-OliveTin-Configs/blob/main/Config-1/CSS-Animations.md)
-
 #### change status color by the container.state that change the css class
 ```css
 p.running {
@@ -124,3 +121,5 @@ p.created {
 ```
 Change Status Colors Based on Container State
 
+#### (Optional) Adding Animation
+If you want to add animation effects to your action button, take a look at this collection of [CSS animation examples](https://github.com/Josh-su/My-OliveTin-Configs/blob/main/Config-1/CSS-Animations.md)
