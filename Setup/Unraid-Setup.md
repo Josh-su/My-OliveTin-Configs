@@ -2,22 +2,12 @@
 ## Search for "OliveTin" in the Community Apps
 To get started, open your Unraid web interface and navigate to the Apps section. In the community app search bar, type "OliveTin" to locate the application.
 
-![image](https://github.com/user-attachments/assets/f4f647f3-c62f-49ec-8ce5-c60e9a6e43fc)
-
+![image](https://github.com/user-attachments/assets/3da139e8-e2c7-42d1-b2ba-b497f4c045c1)
 
 ## Install the OliveTin App by James Read
 From the search results, find the OliveTin app developed by James Read.
 
-![image](https://github.com/user-attachments/assets/7e0bbf81-c33b-4761-b942-57f46a702fb9)
-
-## Activate Advanced View
-ensure that Advanced View is activated. This will provide you with more configuration options for the app.
-
-![image](https://github.com/user-attachments/assets/c0a4a8d2-c7fd-4587-b581-32ea98cd1f40)
-![image](https://github.com/user-attachments/assets/3abad6d3-3bdf-4890-a06e-1993610ab63a)
-
-## (Optional) Change the Icon URL
-You can customize the icon displayed for OliveTin by modifying the Icon URL. The default icon URL does not point to an existing file. If you would like to use the OliveTin logo, you can change it to the following URL:```https://docs.olivetin.app/images/icons/OliveTinLogo.png```
+![image](https://github.com/user-attachments/assets/73fdaba6-64dd-4d4a-b5f5-4d4cb9f3c603)
 
 ## (Optional) Change the Config Path
 If desired, you can specify a custom path for the OliveTin configuration folder.
